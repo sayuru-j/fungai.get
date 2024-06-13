@@ -90,7 +90,7 @@ const Grid = () => {
               return (
                 <div
                   className={cn(
-                    "rounded-full flex items-center justify-center w-20 h-20 drop-shadow p-4",
+                    "rounded-full flex items-center justify-center w-20 h-20 drop-shadow p-4 hover:scale-110 transition-all duration-200 ease-in-out",
                     stkIt.className
                   )}
                   key={stkIt.name}
@@ -114,7 +114,7 @@ const Grid = () => {
               return (
                 <div
                   className={cn(
-                    "rounded-full flex items-center justify-center w-16 h-16 p-4",
+                    "rounded-full flex items-center justify-center w-16 h-16 p-4 hover:scale-110 transition-all duration-200 ease-in-out",
                     stkIt.className
                   )}
                   key={stkIt.name}
@@ -143,17 +143,17 @@ const Grid = () => {
             {students.map((person) => {
               return (
                 <div
-                  className="bg-gradient-to-r from-purple/10 to-purple-300 rounded-xl flex"
+                  className="bg-gradient-to-r from-purple/10 to-purple-300 rounded-xl flex gap-4 py-5"
                   key={person.name}
                 >
-                  <div className="w-1/4 flex items-center justify-center">
+                  <div className="w-1/4 flex items-center justify-center p-2">
                     <Image
-                      className="w-20 h-20 rounded-full"
+                      className="w-14 h-14 md:w-20 md:h-20 rounded-full"
                       src={person.avatar.url}
                       alt={person.avatar.alt}
                     />
                   </div>
-                  <div className="w-3/4 flex flex-col gap-1 p-2">
+                  <div className="w-3/4 flex flex-col gap-1">
                     <h1 className="font-semibold">{person.name}</h1>
                     <div className="flex items-center gap-2">
                       {person.tags.map((each) => (
@@ -181,12 +181,12 @@ const Grid = () => {
             {supervisors.map((person) => {
               return (
                 <div
-                  className="bg-gradient-to-l from-purple/10 to-purple-300 rounded-xl flex"
+                  className="bg-gradient-to-l from-purple/10 to-purple-300 rounded-xl flex gap-4 py-5"
                   key={person.name}
                 >
                   <div className="w-1/4 flex items-center justify-center">
                     <Image
-                      className="w-20 h-20 rounded-full"
+                      className="w-14 h-14 md:w-20 md:h-20 rounded-full"
                       src={person.avatar.url}
                       alt={person.avatar.alt}
                     />
@@ -367,7 +367,7 @@ const Grid = () => {
               >
                 <div className="flex flex-col items-center justify-center gap-4">
                   <h1 className="text-2xl font-semibold">Access Docs Via</h1>
-                  <div className="flex items-center gap-2">
+                  <div className="flex flex-col md:flex-row items-center gap-2">
                     <Link
                       target="_blank"
                       href={
@@ -377,6 +377,7 @@ const Grid = () => {
                       <MagicButton
                         title="Google Drive"
                         icon={<FaGoogleDrive />}
+                        className="w-72"
                       />
                     </Link>
                     <Link
@@ -388,6 +389,7 @@ const Grid = () => {
                       <MagicButton
                         title="One Drive"
                         icon={<DiOnedrive size={24} />}
+                        className="w-72"
                       />
                     </Link>
                   </div>

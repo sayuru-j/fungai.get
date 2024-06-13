@@ -6,7 +6,7 @@ export const navItems: NavBar = [
     link: "/",
   },
   {
-    name: "Project Scope",
+    name: "Scope",
     link: "#about-project",
   },
   {
