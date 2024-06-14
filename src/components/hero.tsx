@@ -73,12 +73,16 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="flex flex-col md:flex-row justify-center relative z-10 gap-2">
+      <div className="flex flex-col md:flex-row justify-center items-center relative z-10 gap-2">
         <Link href={"/download"} target="_self">
-          <MagicButton title="Download For Android" icon={<DiAndroid />} />
+          <MagicButton
+            className="w-72 lg:w-80"
+            title="Download For Android"
+            icon={<DiAndroid />}
+          />
         </Link>
         <MagicButton
-          className="border-slate-200"
+          className="border-slate-200 w-72 lg:w-80"
           title="Not Available For IOS"
           disabled
           icon={<FaAppStoreIos />}
