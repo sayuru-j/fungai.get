@@ -1,15 +1,13 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import MagicButton from "./ui/magic-button";
 import { Spotlight } from "./ui/spotlight";
 import { TextGenerateEffect } from "./ui/text-generate-effect";
 import { DiAndroid } from "react-icons/di";
 import { FaAppStoreIos } from "react-icons/fa";
+import Link from "next/link";
 
 const Hero = () => {
-  const router = useRouter();
-
   return (
     <div className="h-screen pb-20 pt-48">
       {/**
@@ -76,14 +74,13 @@ const Hero = () => {
       </div>
 
       <div className="flex flex-col md:flex-row justify-center relative z-10 gap-2">
-        <MagicButton
-          onClick={() => router.push("/download")}
-          title="Download For Android"
-          icon={<DiAndroid />}
-        />
+        <Link href={"/download"} target="_self">
+          <MagicButton title="Download For Android" icon={<DiAndroid />} />
+        </Link>
         <MagicButton
           className="border-slate-200"
           title="Not Available For IOS"
+          disabled
           icon={<FaAppStoreIos />}
         />
       </div>
